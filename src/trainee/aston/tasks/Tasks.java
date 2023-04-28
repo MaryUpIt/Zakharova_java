@@ -9,7 +9,6 @@
 package trainee.aston.tasks;
 
 import java.util.Arrays;
-import java.util.Stack;
 
 public class Tasks {
 
@@ -18,6 +17,9 @@ public class Tasks {
     }
 
     public static String compareWithName(String input, String name) {
+        if (input == null || name == null) {
+            return "Нет такого имени";
+        }
         return name.equalsIgnoreCase(input) ? "Привет, " + name : "Нет такого имени";
     }
 

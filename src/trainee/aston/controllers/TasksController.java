@@ -7,16 +7,22 @@ import java.io.PrintStream;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
-public record TasksController(PrintStream stream, Scanner scanner) {
+public class TasksController {
+    private final PrintStream stream;
+    private final Scanner scanner;
 
-    public static final String MENU = """
-                        
-            1. Вывести "Привет", если число больше 7.
-            2. Вывести "Привет, Вячеслав", если имя Вячеслав.
-            3. Вывести элементы массива кратные 3м.
-            4. Правильная скобочная последовательность.
-            5. Выйти из проверок.
-            """;
+
+    public TasksController(PrintStream stream, Scanner scanner) {
+        this.stream = stream;
+        this.scanner = scanner;
+    }
+
+    public static final String MENU = "" +
+            "\n1. Вывести \"Привет\", если число больше 7. " +
+            "\n2. Вывести \"Привет, Вячеслав\", если имя Вячеслав. " +
+            "\n3. Вывести элементы массива кратные 3м. " +
+            "\n4. Правильная скобочная последовательность. " +
+            "\n5. Выйти из проверок.";
 
     public static final String NEED_NUMBER = "Введите число: ";
     private static final String NEED_NAME = "Введите имя: ";

@@ -46,16 +46,13 @@ public class BracketsRedactor {
 
     private static Character getPairBracket(char bracket) {
         switch (bracket) {
-            case '(', ')' -> {
-                return bracket == '(' ? ')' : '(';
-            }
-            case '[', ']' -> {
-                return bracket == '[' ? ']' : '[';
-            }
-            case '{', '}' -> {
-                return bracket == '{' ? '}' : '{';
-            }
-            default -> throw new IllegalArgumentException("this is not bracket");
+            case '(' : return ')';
+            case ')' : return '(';
+            case '[' : return ']';
+            case ']' : return '[';
+            case '{' : return '}';
+            case '}' : return '{';
+            default : throw new IllegalArgumentException("this is not bracket");
         }
     }
 
