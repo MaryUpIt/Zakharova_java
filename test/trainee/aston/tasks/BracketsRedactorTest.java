@@ -1,11 +1,12 @@
 package trainee.aston.tasks;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.testng.Assert;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class BracketsRedactorTest {
-
     @Test
     public void testWithNull() {
         Assertions.assertThrows(NullPointerException.class, () -> BracketsRedactor.getCorrectBracketSequence(null));

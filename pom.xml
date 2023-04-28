@@ -1,0 +1,82 @@
+<project>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.academy.app</groupId>
+    <artifactId>My-app</artifactId>
+    <version>1.0.0</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <!-- Кодировка UTF-8 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
+        <!--класс точки входа -->
+        <enter.point>trainee.aston.controllers.Main</enter.point>
+    </properties>
+
+    <build>
+        <plugins>
+            <!-- Конфигурация плагина для сборки jar -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>${enter.point}</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+
+            </plugin>
+
+            <!-- Конфигурация плагина для исполнения комманд -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+
+                <configuration>
+                    <executable>java</executable>
+
+                    <arguments>
+                        <argument>-cp</argument>
+                        <argument>target/classes/</argument>
+                        <argument>${enter.point}</argument>
+                    </arguments>
+
+                    <mainClass>${enter.point}</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

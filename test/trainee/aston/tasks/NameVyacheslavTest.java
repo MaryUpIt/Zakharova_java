@@ -1,7 +1,8 @@
 package trainee.aston.tasks;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-import org.testng.Assert;
+
 
 public class NameVyacheslavTest {
 

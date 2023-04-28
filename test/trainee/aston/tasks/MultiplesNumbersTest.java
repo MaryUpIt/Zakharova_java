@@ -1,8 +1,9 @@
 package trainee.aston.tasks;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.testng.Assert;
+
 
 public class MultiplesNumbersTest {
 
@@ -29,6 +30,6 @@ public class MultiplesNumbersTest {
     private void testGetMultiplesNumbers(int[] array, int[] expected) {
         int[] result = Tasks.getMultiplesNumbers(array, 3);
         Assert.assertEquals(result.length, expected.length);
-        Assert.assertEquals(result, expected);
+        Assert.assertArrayEquals(result, expected);
     }
 }
